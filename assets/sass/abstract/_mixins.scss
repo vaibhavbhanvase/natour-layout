@@ -1,0 +1,55 @@
+@mixin lg($direction, $color...) {
+    background-image: linear-gradient($direction, $color);
+}
+
+@mixin backgroundClip {
+    display: inline-block;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin atCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+// responsive
+
+@mixin response($breakpoint) {
+
+    @if $breakpoint == phone{
+        @media (max-width: 600px){
+            @content;
+        }
+    }
+
+    @if $breakpoint == tabPort{
+        @media (max-width: 900px){
+            @content;
+        }
+    }
+
+    @if $breakpoint == tabLand{
+        @media (max-width: 1200px){
+            @content;
+        }
+    }
+
+    @if $breakpoint == bigScreen{
+        @media (min-width: 1800px){
+            @content;
+        }
+    }
+}
+
+
+
+
+
+
+
+//directives means which starts with @

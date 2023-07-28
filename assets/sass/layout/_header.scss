@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right bottom, $color-primary-light-op, $color-primary-dark-op),
+        url(../images/hero.jpg);
+    // @include lg(to right bottom,red, blue, green);
+    height: 95vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+
+    &-primary {
+        color: $color-white;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+
+        &-main {
+            display: block;
+            font-size: 6rem;
+            font-weight: 400;
+            letter-spacing: 3rem;
+            animation: moveInleft 1s ease-in-out;
+
+            @include response (phone) {
+                font-size: 4rem;
+                letter-spacing: 1.5rem;
+            }
+        }
+
+        &-sub {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1.6rem;
+            animation: moveInright 1s ease-in-out;
+        }
+    }
+
+    // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    // clip-path: polygon(0 0,100% 50%,0 100%);
+}
+
+.logo-box {
+    position: absolute;
+    top: 6rem;
+    left: 6rem;
+
+    .logo {
+        height: 3.5rem;
+        display: inline-block;
+
+        img {
+            height: 100%;
+        }
+    }
+}
